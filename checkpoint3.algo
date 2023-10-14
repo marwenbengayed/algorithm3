@@ -1,0 +1,28 @@
+ALGORITHM playing cards
+// declarations
+PROCEDURE insertion_sort(i,j:INTEGER, arr : ARRAY_OF INTEGER);
+// elt insertion sort procedure
+PROCEDURE insertion_sort(VAR i,j:INTEGER, VAR arr : ARRAY_OF INTEGER);
+VAR
+current,j,arr[i],i: INTEGER;
+BEGIN
+    FOR i FROM 1 TO length(arr)-1 STEP step1  DO
+    current:=arr[i];
+    j:=i-1;
+    WHILE (j>=0 AND arr[j] > current ) DO
+        arr[j + 1] = arr[j];
+            j = j - 1;
+    END_WHILE
+    arr[j + 1] = current;
+    END_FOR
+    RETURN current ;
+END
+// main algorithm
+VAR
+    arr : ARRAY_OF INTEGER[length(arr)-1];
+BEGIN
+// Initialize arr with unsorted data
+    insertion_sort(arr);
+// The array arr is now sorted
+    write('Sorted Array:', arr);
+END
