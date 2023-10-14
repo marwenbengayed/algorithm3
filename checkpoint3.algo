@@ -15,7 +15,6 @@ BEGIN
     END_WHILE
     arr[j + 1] = current;
     END_FOR
-    RETURN current ;
 END
 // main algorithm
 VAR
